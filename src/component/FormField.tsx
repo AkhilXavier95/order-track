@@ -1,4 +1,21 @@
-function FormField({ label, type, id, formik, placeholder }: any) {
+import React from "react";
+import { FieldProps } from "formik";
+
+type FormFieldProps = {
+  label: string;
+  type: string;
+  id: string;
+  formik: FieldProps;
+  placeholder?: string;
+};
+
+const FormField: React.FC<FormFieldProps> = ({
+  label,
+  type,
+  id,
+  formik,
+  placeholder
+}) => {
   return (
     <div>
       <label
@@ -26,6 +43,6 @@ function FormField({ label, type, id, formik, placeholder }: any) {
       )}
     </div>
   );
-}
+};
 
 export default FormField;
