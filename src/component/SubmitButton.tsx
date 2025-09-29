@@ -1,4 +1,16 @@
-function SubmitButton({ isSubmitting, text, submittingText }: any) {
+import React from "react";
+
+type SubmitButtonProps = {
+  isSubmitting: (href: string) => boolean;
+  text: string;
+  submittingText: string;
+};
+
+const SubmitButton: React.FC<SubmitButtonProps> = ({
+  isSubmitting,
+  text,
+  submittingText
+}) => {
   return (
     <button
       type="submit"
@@ -8,5 +20,5 @@ function SubmitButton({ isSubmitting, text, submittingText }: any) {
       {isSubmitting ? submittingText : text}
     </button>
   );
-}
+};
 export default SubmitButton;
