@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from "react";
 import Link from "next/link";
 
 type NavigationItem = {
@@ -9,7 +10,7 @@ type NavigationItem = {
 type NavigationProps = {
   navigation: NavigationItem[];
   isActive: (href: string) => boolean;
-  setSidebarOpen: () => void;
+  setSidebarOpen: Dispatch<SetStateAction<boolean>>;
 };
 
 const MobileNavigation: React.FC<NavigationProps> = ({
