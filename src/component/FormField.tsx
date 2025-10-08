@@ -1,11 +1,16 @@
 import React from "react";
-import { FieldProps } from "formik";
 
 type FormFieldProps = {
   label: string;
   type: string;
   id: string;
-  formik: FieldProps;
+  formik: {
+    handleChange: () => void;
+    handleBlur: () => void;
+    values: { [key: string]: any };
+    touched: { [key: string]: boolean };
+    errors: { [key: string]: string };
+  };
   placeholder?: string;
 };
 
